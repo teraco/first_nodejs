@@ -15,17 +15,6 @@ console.log(remaindatavolume)
 console.log(remaindatavolumeperday)
 
 // フォルダ作成
-fs.mkdir('log', function (err) {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  else {
-    console.log('finished!!');
-  }
-});
-
-// ファイル作成
 fs.mkdir('logs', function (err) {
   if (err) {
     console.error(err);
@@ -36,4 +25,8 @@ fs.mkdir('logs', function (err) {
   }
 });
 
-fs.writeFileSync(`log/${datetime}.log`, `${datetime}`);
+// ファイル作成
+fs.writeFileSync(`logs/${datetime}.log`, `${datetime}`);
+
+// コンソールログ表示
+console.log(`${datetime} ${remaindatavolume} ${remaindatavolumeperday}`);
